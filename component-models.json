@@ -290,5 +290,19 @@
         "valueType": "string"
       }
     ]
+  },
+
+    {
+    "id": "content-fragment",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "text",
+        "value": "",
+        "label": "Slug",
+        "valueType": "string"
+      }
+    ]
   }
+
 ]
