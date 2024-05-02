@@ -11,7 +11,8 @@ function getMetadata(name) {
 const aem = "https://author-p72302-e634773.adobeaemcloud.com";
 
 
-export default function decorate(block) {
+//export default function decorate(block) {
+export default async function decorate(block) {
 
 
   const slugDiv = block.querySelector('div:nth-child(1)'); 
@@ -27,7 +28,7 @@ export default function decorate(block) {
   adventureDiv.id = "adventure-" + slug; 
   quoteDiv.replaceWith(adventureDiv);
 
-fetch(aem + '/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=' + slug)
+await fetch(aem + '/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=' + slug)
 .then(response => response.json())
 .then(response => {
 
