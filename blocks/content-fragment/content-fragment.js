@@ -28,11 +28,13 @@ export default async function decorate(block) {
   adventureDiv.id = "adventure-" + slug; 
   quoteDiv.replaceWith(adventureDiv);
 
+  console.log('slug: ',slug);
+
 await fetch(aem + '/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=' + slug)
 .then(response => response.json())
 .then(response => {
 
-  console.log('response.data.adventureList.items');
+  console.log('response.data.adventureList.items: ', response.data.adventureList.items);
   
 const backgroundImage = response.data.adventureList.items[0].primaryImage._publishUrl;
 document.getElementById(adventureDiv.id).innerHTML = "<section><img src=" + backgroundImage + "></section>";  
