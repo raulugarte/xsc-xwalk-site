@@ -29,7 +29,7 @@ export default async function decorate(block) {
   quoteDiv.replaceWith(adventureDiv);
 
   console.log('slug: ',slug);
-  const slug2 = slug[3].slice(slug[3].indexOf('>')+1,slug[3].indexOf('<'));
+  const slug2 = slug[3].slice(slug[3].indexOf('>')+1,slug[3].length);
   console.log('slug2: ',slug2);
 
 await fetch(aem + '/graphql/execute.json/aem-demo-assets/adventure-by-slug;slug=' + slug)
